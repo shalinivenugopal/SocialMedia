@@ -19,6 +19,9 @@
   <form method="post" action="/views/register.php" id="register_form">
   	<h1>Register</h1>
   	<div>
+      <input type = "hidden" name = "id" value = "<?php echo $id; ?>" >
+
+    </div>
 	  <input type="text" name="username" placeholder="UserName" value="">
 	  <!-- <?php if (isset($name_error)): ?>
 	  	<span><?php echo $name_error; ?></span>
