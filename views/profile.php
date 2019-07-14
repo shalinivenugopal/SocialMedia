@@ -1,9 +1,8 @@
 <?php
 
-  //include_once '../css/register.css';
+  include_once '../css/register.css';
 
   include_once '../controller/ProfileController.php';
-//include('css/register.css'); 
 
 ?>
 

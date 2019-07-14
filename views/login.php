@@ -1,10 +1,5 @@
-
 <?php 
-
 	include_once '../css/login.css';
-
-  include_once '../controller/LoginController.php'; 
-
 ?>
 <html>
 <head>
@@ -24,8 +19,10 @@
   	<div class="form-group">
   		<input type="password"  placeholder="Password" name="password">
   	</div>
+
   	<div class="form-group">
   		<button type="submit" class="btn btn-primary" name="login" id="login_btn">Login</button>
+      Not Yet Registered <a href="register.php">Register</a>
   	</div>
   </form>
   </body>
