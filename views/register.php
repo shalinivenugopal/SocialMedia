@@ -2,9 +2,6 @@
 
   include_once '../css/register.css';
 
-  include_once '../controller/RegisterController.php';
-//include('css/register.css'); 
-
 ?>
 
 
@@ -38,7 +35,8 @@
   	</div>
   	<div>
   		<button type="submit" name="register" id="reg_btn">Register</button>
-  	</div>
+      Already Registered <a href="login.php">Login</a>
+    </div>
   </form>
   </body>
 </html>
