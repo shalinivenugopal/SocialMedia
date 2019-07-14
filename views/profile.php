@@ -20,7 +20,7 @@
 
 <div class="container">
   <h2>Edit Profile</h2>
-  <form action="../controller/ProfileController.php" method="POST">
+  <form action="../controller/ProfileController.php" method="POST" enctype="multipart/form-data">
     <div class="form-group">
       <label for="name">Name:</label>
       <input type="text" class="form-control" id="name" placeholder="Enter name" name="name">
@@ -49,6 +49,10 @@
       <label><input type="checkbox" name="music">Music</label>&emsp;
       <label><input type="checkbox" name="dance">Dance</label>&emsp;
       <label><input type="checkbox" name="sleeping">Sleeping</label>
+    </div>
+    <div class="form-group">
+      <label for="fileToUpload">Upload an Image</label>
+      <input type="file" id="fileToUpload"  name="fileToUpload">
     </div>
     
     
