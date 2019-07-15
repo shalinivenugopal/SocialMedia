@@ -15,7 +15,15 @@
 			<?php 
 			if (mysqli_num_rows($result) > 0) {
 			    while($row = mysqli_fetch_assoc($result)) {
-			        echo '<b><p style="color:green;">'.$row['username'].'</p></b><br>';
+			        echo '
+			        <div class="media">
+			        	<div class="media-left">
+							<img src="../uploads/'.$row['profile_image'].'" class="img-circle" style="width:70px">
+						</div>
+						<div class="media-body">
+							<h4 class="media-heading" style="color:green;">'.$row['username'].'</h4>
+						</div>
+					</div>';
 			    }
 			} else {
 			    echo "<p>No User Online</p>";
