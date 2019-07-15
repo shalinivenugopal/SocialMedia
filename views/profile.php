@@ -5,7 +5,7 @@
   $result = mysqli_query($conn,$sql);
   $data = mysqli_fetch_array($result);
 ?>
-  <h2>Profile</h2>
+  <center><h2>Profile</h2></center>
   <form action="../controller/ProfileController.php" method="POST" enctype="multipart/form-data">
      <div class="form-group">
         <label>Name</label>

@@ -22,12 +22,12 @@
     </div>
     <ul class="nav navbar-nav">
       <li><a href="home.php">Home</a></li>
-      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
+      <!-- <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
         <ul class="dropdown-menu">
           <li class="active"><a href="home.php">Home</a></li>
           
         </ul>
-      </li>
+      </li> -->
       <li><a href="profile.php">profile</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">

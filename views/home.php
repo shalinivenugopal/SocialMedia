@@ -5,7 +5,7 @@
   $sql="SELECT * FROM users WHERE user_status = 1";
   $result = mysqli_query($conn,$sql);
   ?>
-  
+  <center><h3>Home</h3></center>
   <div class="row">
   	<div class="col-sm-9">
 
