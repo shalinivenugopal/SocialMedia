@@ -1,90 +1,53 @@
 <?php 
-  $db = mysqli_connect('localhost', 'root', '', 'demoshalini');
-  $name = "";
-  $mobile = "";
-  $dob = "";
-  $bio = "";
-  $relationship = "";
-  $hobby = "";
-  // $target_dir = "uploads/";
-  // $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
-  // $uploadOk = 1;
-  // $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+include_once '../model/db.php';
+session_start();
+  //$db = mysqli_connect('localhost', 'root', '', 'shalini');
+  $name = $_POST['name'];
+  $mobile = $_POST['mobile'];
+  $dob = $_POST['dob'];
+  $bio = $_POST['bio'];
+  $relationship = array("single", "married");
+  $hobby = array("coding", "blogging", "music", "dance", "sleeping");
+  $relationship = serialize($relationship);
+  $hobby = serialize($hobby);
 
-  if (isset($_POST['submit'])) {
-  	//$id = 0;
-  	$name = $_POST['name'];
-  	$mobile = $_POST['mobile'];
-  	$dob = $_POST['dob'];
-    $bio = $_POST['bio'];
-    $relationship = $_POST['relationship'];
-    $hobby = $_POST['hobby'];
+    if(mysqli_num_rows($r) > 0){
+    $data = mysqli_fetch_array($r);
+    $_SESSION['id']=$data['id'];
+    $_SESSION['name']=$data['name'];
+    $_SESSION['mobile']=$data['mobile'];
+    $_SESSION['dob']=$data['dob'];
+    $_SESSION['bio']=$data['bio'];
+    $_SESSION['relationship']=$data['relationship'];
+    $_SESSION['hobby']=$data['hobby'];
 
-//     $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
-//     if($check !== false) {
-//         echo "File is an image - " . $check["mime"] . ".";
-//         $uploadOk = 1;
-//     } else {
-//         echo "File is not an image.";
-//         $uploadOk = 0;
-//     }
-// }
+    $query = $conn->query($query);
+    $row = $query->fetch_assoc();
 
-// if (file_exists($target_file)) {
-//     echo "Sorry, file already exists.";
-//     $uploadOk = 0;
-// }
-// Check file size
-// if ($_FILES["fileToUpload"]["size"] > 500000) {
-//     echo "Sorry, your file is too large.";
-//     $uploadOk = 0;
-// }
-// Allow certain file formats
-// if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
-// && $imageFileType != "gif" ) {
-//     echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
-//     $uploadOk = 0;
-// }
+    $relationship = $row["relationship"];
+    $relationship = unserialize($relationship);
 
-// if ($uploadOk == 0) {
-//     echo "Sorry, your file was not uploaded.";
-// // if everything is ok, try to upload file
-// } else {
-//     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-//         echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
-//     } else {
-//         echo "Sorry, there was an error uploading your file.";
-//     }
+    $hobby = $row["hobby"];
+    $hobby = unserialize($hobby);
+    
+   //  if (isset($_POST['upload'])) {
+   // $file_name = $_FILES['file']['name'];
+   // $file_type = $_FILES['file']['type'];
+   // $file_size = $_FILES['file']['size'];
+   // $file_tem_loc = $_FILES['file']['tmp_name'];
+   // $file_store = "upload/".$file_name;
+   // if (move_uploaded_file($file_tem_loc, $file_store)) {
+   //   echo "Files are Uploaded";
+   // }
 
+    $sql="UPDATE users (name,mobile,dob,bio,relationship,hobby) VALUES ('$name', '$mobile', '$dob', '$bio', '$relationship', '$hobby')";
+    $r = mysqli_query($conn,$sql);
+    //header('location:../views/home.php');
+  }else{
+    header('location:../views/login.php?status=error');
+  }
 
-
-    //$status = 0;
-
-    $query = "INSERT INTO profile (name,mobile,dob,bio,relationship,hobby) VALUES ('$name', '$mobile', '$dob', '$bio', '$relationship', '$hobby')";
-    mysqli_query($db,$query);
-    //$emailQuery =$db->query("SELECT * FROM users WHERE email = '$email'");
-    //$emailCount = mysqli_num_rows($emailQuery);
-
-        //if($emailCount != 0){
-          //$errors[] = 'That email already exists in our database.';
-        //}
-  	// $sql_u = "SELECT * FROM users WHERE username='$username'";
-  	// $sql_e = "SELECT * FROM users WHERE email='$email'";
-  	// $res_u = mysqli_query($db, $sql_u);
-  	// $res_e = mysqli_query($db, $sql_e);
-
-  	//if (mysqli_num_rows($email) > 0) {
-      //$email_error = "Sorry... email already taken";  
-  	//}else{
-      //     $query = "INSERT INTO users (username, email, password) 
-      	//    	  VALUES ('$username', '$email', '".md5($password)."')";
-          // $results = mysqli_query($db, $query);
-           echo 'Saved!';
-           exit();
-
-                      //header('location: views/login.php');
-
-  	//}
-}
+  
+ }
 
 ?>

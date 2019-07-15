@@ -34,12 +34,12 @@ CREATE TABLE `users` (
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `user_status` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT '0',
-  `mobile` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `dob` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `bio` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `hobby` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `profile_image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `relationship` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+  `mobile` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `dob` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `bio` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `relationship` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `hobby` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `profile_image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -67,3 +67,5 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+

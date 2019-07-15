@@ -11,7 +11,7 @@
     </div>
     <div class="form-group">
       <label>DOB</label>
-      <input type="date" class="form-control" id="dob" placeholder="Enter Date Of Birth" name="dob">
+      <input type="date" format="DD-MM-YYYY" class="form-control" id="dob" placeholder="Enter Date Of Birth" name="dob">
     </div>
     <div class="form-group">
       <label>Bio Data</label>
@@ -19,19 +19,19 @@
     </div>
     <div class="form-group">
       <label>Married Status</label><br>
-      <label><input type="radio" name="relationship">Single</label>&emsp;
-      <label><input type="radio" name="relationship">Married</label>    
+      <label><input type="radio" name="relationship[]" value="">Single</label>&emsp;
+      <label><input type="radio" name="relationship[]" value="">Married</label>    
     </div>
     <div class="form-group">
-      <label><input type="checkbox" name="coding" value="">Coding</label>&emsp;
-      <label><input type="checkbox" name="blogging" value="">Blogging</label>&emsp;
-      <label><input type="checkbox" name="music" value="">Music</label>&emsp;
-      <label><input type="checkbox" name="dance" value="">Dance</label>&emsp;
-      <label><input type="checkbox" name="sleeping" value="">Sleeping</label>
+      <label><input type="checkbox" name="hobby[]" value="">Coding</label>&emsp;
+      <label><input type="checkbox" name="hobby[]" value="">Blogging</label>&emsp;
+      <label><input type="checkbox" name="hobby[]" value="">Music</label>&emsp;
+      <label><input type="checkbox" name="hobby[]" value="">Dance</label>&emsp;
+      <label><input type="checkbox" name="hobby[]" value="">Sleeping</label>
     </div><br>
     <div class="form-group">
-      <label for="fileToUpload">Profile Image</label>
-      <input type="file" name="profile">
+      <label for="upload">Profile Image</label>
+      <input type="file" name="upload" value = "upload">
     </div>
     
     
