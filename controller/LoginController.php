@@ -7,9 +7,13 @@ session_start();
 	$result = mysqli_query($conn,$sql);
 	if(mysqli_num_rows($result) > 0){
 		$data = mysqli_fetch_array($result);
+		$_SESSION['id']=$data['id'];
 		$_SESSION['username']=$data['username'];
 		$_SESSION['email']=$data['email'];
-		header('location:../views/profile.php');
+		$id = $data['id'];
+		$sql="UPDATE users SET user_status ='1' where id='$id'";
+		$result = mysqli_query($conn,$sql);
+		header('location:../views/home.php');
 	}else{
 		header('location:../views/login.php?status=error');
 	}

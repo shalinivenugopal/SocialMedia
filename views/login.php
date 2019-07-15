@@ -1,6 +1,11 @@
 <?php 
 	include_once '../css/login.css';
+  session_start();
+  if ($_SESSION) {
+    header('location:home.php');
+  }
 ?>
+
 <html>
 <head>
   <title>Login</title>
