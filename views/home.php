@@ -17,7 +17,7 @@
 <?php 
 if (isset($_GET['search'])) {
 	$search = $_GET['search'];
-	$sqlsearch="SELECT * FROM users WHERE username LIKE '%$search%' || mobile LIKE '%$search%' || email LIKE '%$search%'";
+	$sqlsearch="SELECT * FROM users WHERE username LIKE '%$search%' || dob LIKE '%$search%' || hobby LIKE '%$search%'";
     $resultsearch = mysqli_query($conn,$sqlsearch);
     ?>
 

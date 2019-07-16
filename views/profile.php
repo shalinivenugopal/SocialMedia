@@ -9,7 +9,7 @@
   <form action="../controller/ProfileController.php" method="POST" enctype="multipart/form-data">
      <div class="form-group">
         <label>Name</label>
-        <input type="text" class="form-control"  placeholder="Enter name" name="name">
+        <input type="text" class="form-control"  placeholder="Enter name" value="<?php echo $data['username'] ?>" name="name">
      </div>
      <div class="form-group">
         <label>Mobile</label>
